@@ -9,13 +9,11 @@ export const AddCategory = ({ setCategories }) => {
     //si yo dejo el useState en undefined (es decir vacio literalmente), me va a tirar un error.
     const handleInputChange = (e) => {
         setinputValue(e.target.value)
-        console.log('Handleinputchange llamado');
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         //validacion
-        console.log('Hola mundo', inputValue)
         if (inputValue.trim().length > 2) {
             //esto se trata de un callback, cats hace referencia a categories y por eso puede desestructurar el array.
             setCategories(cats => [inputValue, ...cats]);
